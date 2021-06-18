@@ -1,5 +1,5 @@
 import * as types from "../types";
-import { LOGIN, MENU, MENUS } from "../../../constants";
+import { LOGIN, MENU, MENUS, COUNTERS } from "../../../constants";
 import { Qiwii } from "../../../utils/Api";
 import qs from "qs";
 import { isMockAllowed } from "../../../mocks/Config";
@@ -75,6 +75,25 @@ export function fetchEntertainmentCategory() {
           console.log(data);
           if (data.status === "Success") {
             dispatch(setDataEntertainment(data.data));
+          }
+        })
+        .catch((error) => console.log(error));
+    });
+  };
+}
+
+const setDataCounters = (data) => ({
+  type: types.SET_DATA_COUNTERS,
+  payload: data,
+});
+
+export function fetchCounters(id_organization, id_area) {
+  return (dispatch) => {
+    return new Promise((resolve, reject) => {
+      Qiwii.get(`${COUNTERS}/${id_organization}/${id_area}`)
+        .then(({ data }) => {
+          if (data.status === "Success") {
+            dispatch(setDataCounters(data.data));
           }
         })
         .catch((error) => console.log(error));

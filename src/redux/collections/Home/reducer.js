@@ -33,3 +33,14 @@ export const dataMenus = createReducer(
     },
   }
 );
+
+export const dataCounters = createReducer(
+  {},
+  {
+    [types.SET_DATA_COUNTERS](state, action) {
+      return {
+        data: action.payload,
+      };
+    },
+  }
+);

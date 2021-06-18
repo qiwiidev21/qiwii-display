@@ -1,8 +1,9 @@
 import { isMockAllowed } from "./Config";
-import { LOGIN, MENU, MENUS } from "../constants";
+import { LOGIN, MENU, MENUS, COUNTERS } from "../constants";
 import responseLogin from "./responses/responseLogin";
 import responseMenus from "./responses/responseMenus";
 import responseEntertainment from "./responses/responseEntertainment";
+import responseDisplay from "./responses/responseDisplay";
 
 export const mockQiwii = (instance: any) => {
   if (isMockAllowed("Qiwii", LOGIN)) {
@@ -42,6 +43,16 @@ export const mockQiwii = (instance: any) => {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve([200, responseEntertainment]);
+        });
+      });
+    });
+  }
+
+  if (isMockAllowed("Qiwii", COUNTERS)) {
+    instance.onGet(`${COUNTERS}/137/256`).reply(() => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([200, responseDisplay]);
         });
       });
     });

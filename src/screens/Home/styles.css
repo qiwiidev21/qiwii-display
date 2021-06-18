@@ -2,13 +2,45 @@
   align-items: center;
   justify-content: center;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.card-wrapper {
+  float: left;
 }
 
 .card-title {
   font-family: "Rubik Normal";
-  text-align: center;
-  color: #8f1619;
+  text-align: left;
+  color: #ffffff;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.connection-status {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: "green";
+  box-shadow: 0 0 0 4px rgb(255 255 255 / 40%);
+  margin-top: 5px;
+}
+
+.ticket-container {
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-text {
+  font-family: "Rubik Normal";
+  text-align: center;
+  color: #ffffff;
+  top: 3px;
+}
+
+.ticket-icon {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
 }

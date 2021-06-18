@@ -6,7 +6,7 @@ import React from "react";
 import "./styles.css";
 import PropTypes from "prop-types";
 import Logo from "../../assets/images/header-logo.png";
-import { ArrowLeft, Bell } from "react-bootstrap-icons";
+import { ArrowLeft } from "react-bootstrap-icons";
 import { useHistory } from "react-router-dom";
 
 function Header({ back, title }) {
@@ -40,7 +40,7 @@ function Header({ back, title }) {
           )}
         </div>
         <div>
-          <Bell color="white" size={20} />
+          <div className="px-2" />
         </div>
       </nav>
     </header>

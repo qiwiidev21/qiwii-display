@@ -1,5 +1,5 @@
 import { render as rtlRender } from "@testing-library/react";
-import Services from "./index";
+import Detail from "./index";
 import thunkMiddleware from "redux-thunk";
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
@@ -20,7 +20,7 @@ function render(
   function Wrapper({ children }) {
     return <Provider store={store}>{children}</Provider>;
   }
-  return rtlRender(<Services />, { wrapper: Wrapper, ...renderOptions });
+  return rtlRender(<Detail />, { wrapper: Wrapper, ...renderOptions });
 }
 
 test("renders App", () => {
